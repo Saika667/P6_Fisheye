@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photograph.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -11,9 +11,23 @@
     <header>
       <img src="assets/images/logo.png" class="logo" />
     </header>
-    <main id="main">
+    <main id="main" class="photograph">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="photograph-header-button contact_button" onclick="displayModal()">Contactez-moi</button>
+      </div>
+      <div class="photograph-menu">
+        <h2>Trier par</h2>
+        <div class="photograph-menu-container">
+          <button class="photograph-menu-container-button arrow" id="arrow-button">
+            <img class="photograph-menu-container-button-arrow" src="assets/images/arrow.svg" alt="flèche vers le bas, ouvrir le menu" />
+          </button>
+          <button class="photograph-menu-container-button">Popularité</button>
+          <button class="photograph-menu-container-button">Date</button>
+          <button class="photograph-menu-container-button">Titre</button>
+        </div>
+      </div>
+      <div class="photograph-body">
+
       </div>
     </main>
     <div id="contact_modal">
@@ -31,7 +45,7 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/pages/photographer.js"></script>
+    <script type="module" src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

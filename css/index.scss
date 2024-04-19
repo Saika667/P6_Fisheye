@@ -1,0 +1,58 @@
+@import "_global.scss";
+
+.photographer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 25px;
+        margin: 35px 0;
+
+        &:nth-child(3n + 1) {
+            justify-self: start;
+        }
+
+        &:nth-child(3n) {
+            justify-self: end;
+        }
+
+        a {
+            text-decoration: none;
+            color: #D3573C;
+            text-align: center;
+        }
+
+        &-image {
+            height: 200px;
+            width: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+
+            img {
+                max-width: 100%;
+                min-height: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+                transform: translate3d(0, 0, 1px);
+                object-position: center;
+            }
+        }
+
+       &-locate {
+        color: #901C1C;
+       }
+
+       &-slogan {}
+       &-price {
+        color: #525252;
+       }
+    }
+}
+
+.logo {
+    height: 50px;
+}
