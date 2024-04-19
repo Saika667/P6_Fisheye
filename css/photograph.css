@@ -71,37 +71,52 @@ header img {
   padding: 0 2rem 0 0;
 }
 .photograph-menu-container {
-  background-color: #901C1C;
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
-  border-radius: 5px;
-  height: 42px;
-  overflow: hidden;
   position: relative;
 }
-.photograph-menu-container :not(:last-child) {
-  border-bottom: solid 1px white;
-}
-.photograph-menu-container #arrow-button {
-  position: absolute;
+.photograph-menu-container-arrow {
   padding: 0;
   border: none;
-  right: 10px;
-  top: 0;
-  bottom: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background-color: #901C1C;
+  border-radius: 5px;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  min-width: 10rem;
 }
-.photograph-menu-container-button {
+.photograph-menu-container-arrow p {
+  padding: 0.7rem 1rem;
+  margin: 0;
+}
+.photograph-menu-container-arrow img {
+  padding: 0 1rem 0 0;
+}
+.photograph-menu-container-select {
+  overflow: hidden;
+  position: absolute;
+  display: none;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  width: 10rem;
+  background-color: #901C1C;
+}
+.photograph-menu-container-select :not(:last-child) {
+  border-bottom: solid 1px white;
+}
+.photograph-menu-container-select :first-child {
+  border-top: solid 1px white;
+}
+.photograph-menu-container-select-button {
   border: none;
   background-color: #901C1C;
   color: white;
-  padding: 10px 40px 10px 10px;
+  padding: 0.7rem 0.5rem;
   font-family: "DM Sans", sans-serif;
   text-align: start;
   font-size: 1.1rem;
+  width: 100%;
 }
 .photograph-body {
   display: flex;

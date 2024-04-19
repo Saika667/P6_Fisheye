@@ -27,7 +27,7 @@ const photographerMediasTemplate = (data, mediaType) => {
             <div class="photograph-body-article-information">
                 <p>${data.title}</p>
                 <div class="photograph-body-article-information-counter">
-                    <span>11</span>
+                    <span>${data.likes}</span>
                     <img class="photograph-body-article-information-counter-icon" src="assets/images/heart.svg" alt="coeur" />
                 </div>
             </div>
@@ -53,6 +53,11 @@ const photographerPortraitTemplate = (data) => {
     `)
 }
 
+const filterButtonTemplate = (data) => {
+    return document.createRange().createContextualFragment(`
+        <button class="photograph-menu-container-select-button">${data}</button>
+    `)
+}
 // const photographerTemplate = (data) => {
 //     const { name, portrait } = data
 
@@ -71,4 +76,4 @@ const photographerPortraitTemplate = (data) => {
 //     return { name, picture, getUserCardDOM }
 // }
 
-export { photographerTemplate, photographerMediasTemplate, informationPhotographerTemplate, photographerPortraitTemplate }
+export { photographerTemplate, photographerMediasTemplate, informationPhotographerTemplate, photographerPortraitTemplate, filterButtonTemplate }
