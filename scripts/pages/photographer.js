@@ -47,3 +47,21 @@ arrowButton.addEventListener('click', () => {
     }
 })
 // fin gestion du select custom
+
+// gestion du formulaire de contact
+const contactForm = document.getElementById('contact_modal')
+const closeFormButton = document.getElementById('close_button')
+const sendFormButton = document.getElementById('send_button')
+const displayFormButton = document.getElementById('contact_button')
+
+//ouvre la modal
+displayFormButton.addEventListener('click', () => {
+    contactForm.style.display = 'flex'
+})
+
+//ferme la modal
+closeFormButton.addEventListener('click', () => {
+    contactForm.style.display = 'none'
+})
+
+// fin de gestion du formulaire de contact

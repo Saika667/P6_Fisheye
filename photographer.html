@@ -8,12 +8,21 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
+    <div class="counter">
+      <div class="counter-container">
+        <span>267 865</span>
+        <img class="photograph-body-article-information-counter-icon" src="assets/images/heart.svg" alt="coeur" />
+      </div>
+      <span>300 €/jour</span>
+    </div>
+
     <header>
       <img src="assets/images/logo.png" class="logo" />
     </header>
+
     <main id="main" class="photograph">
       <div class="photograph-header">
-        <button class="photograph-header-button contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button id="contact_button" class="photograph-header-button contact-button">Contactez-moi</button>
       </div>
       <div class="photograph-menu">
         <h2>Trier par</h2>
@@ -35,16 +44,33 @@
     </main>
     <div id="contact_modal">
 			<div class="modal">
-				<header>
+				<div class="modal-header">
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
+          <button id="close_button">
+            <img src="assets/icons/close.svg" onclick="closeModal()" />
+          </button>
+        </div>
+				<form class="modal-form">
+					<div class="modal-form-content">
 						<label>Prénom</label>
 						<input />
 					</div>
-          <button class="contact_button">Envoyer</button>
+
+          <div class="modal-form-content">
+						<label>Nom</label>
+						<input />
+					</div>
+
+          <div class="modal-form-content">
+						<label>Email</label>
+						<input />
+					</div>
+
+          <div class="modal-form-content">
+						<label>Votre message</label>
+						<textarea></textarea>
+					</div>
+          <button id="send_button" class="contact-button">Envoyer</button>
 				</form>
 			</div>
 		</div>

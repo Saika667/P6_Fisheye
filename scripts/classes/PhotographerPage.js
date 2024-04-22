@@ -12,7 +12,7 @@ class PhotographerPage {
         const photograph = await this._fetch.getPhotographerById(this._photographerId)
 
         const photographerHeader = document.querySelector('.photograph-header')
-        const contactButton = document.querySelector('.contact_button')
+        const contactButton = document.querySelector('.contact-button')
         photographerHeader.insertBefore(informationPhotographerTemplate(photograph), contactButton)
         photographerHeader.appendChild(photographerPortraitTemplate(photograph))
 
