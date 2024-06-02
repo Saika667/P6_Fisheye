@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/photograph.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -7,34 +7,37 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
+
   <body>
     <div class="counter">
       <div class="counter-container">
-        <span>267 865</span>
-        <img class="photograph-body-article-information-counter-icon" src="assets/images/heart.svg" alt="coeur" />
+        <span aria-label="nombre total de likes"></span>
+        <img id="counter-heart" src="assets/icons/heart.svg" alt="coeur" />
       </div>
-      <span>300 €/jour</span>
+      <span class="counter-price" aria-label="prix à la journée"></span>
     </div>
 
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
+    <header aria-label="En-tête de la page">
+      <a id="home_link" href="index.html" aria-label="revenir à la page d'accueil">
+        <img src="assets/images/logo.png" class="logo" alt="logo fisheye"/>
+      </a>
     </header>
 
-    <main id="main" class="photograph">
+    <main id="main" class="photograph" aria-label="Contenu de la page">
       <div class="photograph-header">
-        <button id="contact_button" class="photograph-header-button contact-button">Contactez-moi</button>
+        <button id="contact_button" type="button" class="photograph-header-button contact-button" aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
       </div>
       <div class="photograph-menu">
         <h2>Trier par</h2>
         <div class="photograph-menu-container">
-          <button class="photograph-menu-container-arrow" id="arrow-button">
+          <button class="photograph-menu-container-arrow" type="button" id="arrow-button" aria-label="Bouton permettant d'ouvrir le choix des filtres">
             <p id="filter">Popularité</p>
-            <img class="photograph-menu-container-button-arrow" src="assets/images/arrow.svg" alt="flèche vers le bas" />
+            <img class="photograph-menu-container-button-arrow" src="assets/icons/arrow.svg" alt="flèche vers le bas" />
           </button>
 
-          <div class="photograph-menu-container-select" id="select-container">
-            <button class="photograph-menu-container-select-button">Date</button>
-            <button class="photograph-menu-container-select-button">Titre</button>
+          <div class="photograph-menu-container-select" id="select-container" aria-expanded="false">
+            <button class="photograph-menu-container-select-button" type="button" aria-label="bouton filtre date">Date</button>
+            <button class="photograph-menu-container-select-button" type="button" aria-label="bouton filtre titre">Titre</button>
           </div>
         </div>
       </div>
@@ -42,38 +45,74 @@
 
       </div>
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<div class="modal-header">
-          <h2>Contactez-moi</h2>
-          <button id="close_button">
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
+
+    <section class="image" aria-hidden="true">
+      <div class="image-container">
+        <div class="image-container-before">
+          <button class="image-container-before-button" aria-label="Précedent" type="button" tabindex="100">
+            <img src="assets/icons/chevron-left.svg" alt="chevron vers la gauche, précédent"/>
           </button>
         </div>
-				<form class="modal-form">
+
+        <div class="image-container-img">
+          <div class="image-container-img-wrapper">
+            <div class="image-container-img-wrapper-title" aria-label="Contenu de l'aperçu média">
+            </div>
+          </div>
+        </div>
+
+        <div class="image-container-after">
+          <button class="image-container-after-close" aria-label="Fermer l'aperçu des médias" type="button" tabindex="102">
+            <img src="assets/icons/close.svg" alt="croix, fermer l'aperçu de média"/>
+          </button>
+          <button class="image-container-after-button" aria-label="Suivant" type="button" tabindex="101">
+            <img src="assets/icons/chevron-right.svg" alt="chevron vers la droite, suivant"/>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div id="contact_modal" aria-hidden="true">
+			<div class="modal">
+				<div class="modal-header">
+          <div class="modal-header-wrapper">
+            <h2>Contactez-moi</h2>
+            <span id="contact-photographer-name"></span>
+          </div>
+          <button id="close_button" type="button" aria-label="Bouton permettant de fermer le formulaire" tabindex="108">
+            <img src="assets/icons/close.svg" onclick="closeModal()" alt="croix, fermer le formulaire"/>
+          </button>
+        </div>
+				<form class="modal-form" aria-label="formulaire de contact">
 					<div class="modal-form-content">
-						<label>Prénom</label>
-						<input />
+						<label for="first">Prénom</label>
+						<input id="first" name="first" type="text" aria-label="Champ de saisie du prénom" tabindex="103"/>
+            <span class="modal-form-content-error" id="error-first"></span>
 					</div>
 
           <div class="modal-form-content">
-						<label>Nom</label>
-						<input />
+						<label for="last">Nom</label>
+						<input id="last" name="last" type="text" aria-label="Champ de saisie du nom" tabindex="104"/>
+            <span class="modal-form-content-error" id="error-last"></span>
 					</div>
 
           <div class="modal-form-content">
-						<label>Email</label>
-						<input />
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" aria-label="Champ de saisie de l'email" tabindex="105"/>
+            <span class="modal-form-content-error" id="error-email"></span>
 					</div>
 
           <div class="modal-form-content">
-						<label>Votre message</label>
-						<textarea></textarea>
+						<label for="message">Votre message</label>
+						<textarea id="message" name="message" aria-label="Champ de saisie du message" tabindex="106"></textarea>
+            <span class="modal-form-content-error" id="error-message"></span>
 					</div>
-          <button id="send_button" class="contact-button">Envoyer</button>
+
+          <button id="send_button" class="contact-button" type="submit" aria-label="Bouton d'envoi du formulaire de contact" tabindex="107">Envoyer</button>
 				</form>
 			</div>
 		</div>
+
     <script type="module" src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

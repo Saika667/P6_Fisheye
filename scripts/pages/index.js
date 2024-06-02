@@ -1,52 +1,15 @@
 import HomePage from '../classes/HomePage.js'
 
 const homePage = new HomePage()
-homePage.displayData()
+await homePage.displayData()
 
-// const getPhotographers = async () => {
-//     // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet,
-//     // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
-//     // const photographers = [
-//     //     {
-//     //         name: 'Ma data test',
-//     //         id: 1,
-//     //         city: 'Paris',
-//     //         country: 'France',
-//     //         tagline: 'Ceci est ma data test',
-//     //         price: 400,
-//     //         portrait: 'account.png'
-//     //     },
-//     //     {
-//     //         name: 'Autre data test',
-//     //         id: 2,
-//     //         city: 'Londres',
-//     //         country: 'UK',
-//     //         tagline: 'Ceci est ma data test 2',
-//     //         price: 500,
-//     //         portrait: 'account.png'
-//     //     }
-//     // ]
-//     const fetchPhotographer = new FetchPhotographer('../../data/photographers.json')
-//     const data = fetchPhotographer.getData()
-//     console.log(data)
-//     // et bien retourner le tableau photographers seulement une fois récupéré
-//     // return ({ photographers: [...photographers, ...photographers, ...photographers] })
-// }
+// -------------------------------------gestion du tab-------------------------------------
+const photographerLinks = document.querySelectorAll('.photographer-article-link')
 
-// const displayData = async (photographers) => {
-//     const photographersSection = document.querySelector('.photographer_section')
-
-//     photographers.forEach((photographer) => {
-//         const photographerModel = photographerTemplate(photographer)
-//         const userCardDOM = photographerModel.getUserCardDOM()
-//         photographersSection.appendChild(userCardDOM)
-//     })
-// }
-
-// const init = async () => {
-//     // Récupère les datas des photographes
-//     const { photographers } = await getPhotographers()
-//     displayData(photographers)
-// }
-
-// init()
+photographerLinks[photographerLinks.length - 1].addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && !e.shiftKey) {
+        e.preventDefault()
+        document.querySelector('#home_link').focus()
+    }
+})
+// -------------------------------------fin gestion du tab-------------------------------------

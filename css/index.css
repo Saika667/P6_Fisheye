@@ -64,4 +64,9 @@ h1 {
 
 .logo {
   height: 50px;
+}
+
+a:focus-visible {
+  outline: solid 2px #D3573C;
+  border-radius: 4px;
 }/*# sourceMappingURL=index.css.map */

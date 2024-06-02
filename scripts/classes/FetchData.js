@@ -7,7 +7,6 @@ class FetchData {
     async getData () {
         this.data = await fetch(this._url)
             .then((data) => data.json())
-        console.log(this.data)
     }
 
     async getPhotographers () {
