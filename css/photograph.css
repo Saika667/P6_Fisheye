@@ -266,6 +266,7 @@ h1 {
   right: 0;
   left: 0;
   display: none;
+  z-index: 20;
 }
 
 .contact-button {

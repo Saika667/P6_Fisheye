@@ -62,6 +62,7 @@ const messageInputError = document.getElementById('error-message')
 // ouvre la modal
 displayFormButton.addEventListener('click', () => {
     contactForm.style.display = 'flex'
+    contactForm.focus()
     contactForm.setAttribute('aria-hidden', false)
 })
 
@@ -71,6 +72,12 @@ closeFormButton.addEventListener('click', () => {
     contactForm.setAttribute('aria-hidden', true)
 })
 
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        contactForm.style.display = 'none'
+        contactForm.setAttribute('aria-hidden', true)
+    }
+})
 // N'accepte que des lettres, les accents, les espaces et le tiret ("-") et minimum 2 caractères
 const regexNames = /^[A-Za-zÀ-ÿ\s-]{2,}$/
 // accepte s'il y a une suite de caractère avant et après le @ et que cette string se termine d'un point suivi d'au moins 2 caractères
@@ -195,13 +202,19 @@ export const registerMediaLinksEvents = () => {
 // ouvre l'aperçu du media
 const openMediaFunction = (e) => {
     photographerPage.lightbox.show(e.currentTarget.dataset.mediaIndex)
-    document.querySelector('.image-container').focus()
+    document.querySelector('.image').focus()
 }
 
 // ferme l'aperçu du média
 const closeLightboxButton = document.querySelector('.image-container-after-close')
 closeLightboxButton.addEventListener('click', () => {
     photographerPage.lightbox.close()
+})
+
+document.querySelector('.image').addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        photographerPage.lightbox.close()
+    }
 })
 
 // affiche le média suivant
@@ -236,7 +249,6 @@ document.querySelector('button[tabindex="100"]').addEventListener('keydown', (e)
 
 // flèche de droite et gauche du clavier
 document.addEventListener('keydown', (e) => {
-    console.log(e)
     if (!photographerPage.lightbox.isShowed()) {
         return
     }
